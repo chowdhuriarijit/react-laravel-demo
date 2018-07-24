@@ -1,0 +1,52 @@
+@mixin remove-btn() {
+  float: right;
+  background: #fff;
+  outline: none;
+  border: 1px solid darkred;
+  content: 'x';
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  color: darkred;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  text-align: center;
+}
+
+
+@mixin checked-box() {
+  &:before {
+    background: url('../images/checkedcheckbox.png') no-repeat;
+    margin-right: -10px;
+    border-radius: 3px;
+    border: none;
+  }
+}
+
+@mixin unchecked-box() {
+  position: static;
+
+  &:before {
+    position: relative;
+    top: 0;
+    left: -19px;
+    content: ' ';
+    background: #fff;
+    border: 1px solid #878787;
+    width: 19px;
+    height: 19px;
+    display: inline-block;
+    margin-right: -10px;
+    margin-bottom: -4px;
+    border-radius: 3px;
+  }
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
